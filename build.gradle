@@ -24,3 +24,29 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+bootWar{                        //bootWar Task시 이름 지정
+  archiveBaseName="springproject"
+  archiveVersion="0.0.1-SNAPSHOT"
+}
+project.ext{
+  warBaseName = 'gradle-task'
+  warVersion = '0.0.1-'+ new Date().format('yyyyMMdd-HHmmss')
+}
+
+//war {
+//  enabled = true
+//  baseName = project.warBaseName
+//  version = project.warVersion
+//  exclude("build/**")
+//}
+//
+//bootJar{
+//  archiveBaseName="springproject"
+//  archiveVersion="0.0.1-SNAPSHOT"
+//}
+//jar{
+//  enabled = true
+//  baseName = "springproject"
+//  version = "0.0.1-SNAPSHOT"
+//}
