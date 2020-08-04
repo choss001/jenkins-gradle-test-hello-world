@@ -34,6 +34,17 @@ project.ext{
   warVersion = '0.0.1-'+ new Date().format('yyyyMMdd-HHmmss')
 }
 
+//환경 변수 테스트
+ext.profile = (!project.hasProperty('profile') || !profile) ? 'local' : profile
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/main/resources-env/${profile}"
+        }
+    }
+}
+
 //war {
 //  enabled = true
 //  baseName = project.warBaseName

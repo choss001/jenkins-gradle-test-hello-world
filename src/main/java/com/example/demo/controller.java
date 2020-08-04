@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class controller {
   
+  
   @Value("${val}")
   private String val;
   
-  private OrderService orderService;
+  private final OrderService orderService;
 
   public controller (OrderService orderService) {
     this.orderService = orderService;
